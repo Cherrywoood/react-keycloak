@@ -1,16 +1,36 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {keycloak} from "./helpers/keycloak";
 import {ReactKeycloakProvider} from "@react-keycloak/web";
+
+import { kcContext as kcLoginThemeContext } from "./keycloak-theme/login/kcContext";
+import { kcContext as kcAccountThemeContext } from "./keycloak-theme/account/kcContext";
+
+const KcLoginThemeApp = lazy(() => import("./keycloak-theme/login/KcApp"));
+const KcAccountThemeApp = lazy(() => import("./keycloak-theme/account/KcApp"));
+const App = lazy(() => import("./App"));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <ReactKeycloakProvider authClient={keycloak} initOptions={{pkceMethod: 'S256'}}>
         <React.StrictMode>
-            <App />
+            <Suspense>
+                {(()=>{
+
+                    if( kcLoginThemeContext !== undefined ){
+                        return <KcLoginThemeApp kcContext={kcLoginThemeContext} />;
+                    }
+
+                    if( kcAccountThemeContext !== undefined ){
+                        return <KcAccountThemeApp kcContext={kcAccountThemeContext} />;
+                    }
+
+                    return <App />;
+
+                })()}
+            </Suspense>
         </React.StrictMode>
     </ReactKeycloakProvider>
 );
