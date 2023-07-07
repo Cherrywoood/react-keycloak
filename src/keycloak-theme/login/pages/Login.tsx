@@ -40,7 +40,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             {...{ kcContext, i18n, doUseDefaultCss, classes }}
             displayInfo={social.displayInfo}
             displayWide={realm.password && social.providers !== undefined}
-            headerNode={msg("doLogIn")}
+            headerNode={msg("doLogInHeader")}
             infoNode={
                 realm.password &&
                 realm.registrationAllowed &&
@@ -136,7 +136,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                         </div>
                                     )}
                                 </div>
-                                <div className={getClassName("kcFormOptionsWrapperClass")}>
+                              {/*  <div className={getClassName("kcFormOptionsWrapperClass")}>
                                     {realm.resetPasswordAllowed && (
                                         <span>
                                             <a tabIndex={5} href={url.loginResetCredentialsUrl}>
@@ -144,7 +144,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                             </a>
                                         </span>
                                     )}
-                                </div>
+                                </div>*/}
                             </div>
                             <div id="kc-form-buttons" className={getClassName("kcFormGroupClass")}>
                                 <input
@@ -171,6 +171,15 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     value={msgStr("doLogIn")}
                                     disabled={isLoginButtonDisabled}
                                 />
+                            </div>
+                            <div className={getClassName("kcFormOptionsWrapperClass")}>
+                                {realm.resetPasswordAllowed && (
+                                    <span>
+                                            <a tabIndex={5} href={url.loginResetCredentialsUrl}>
+                                                {msg("doForgotPassword")}
+                                            </a>
+                                        </span>
+                                )}
                             </div>
                         </form>
                     )}

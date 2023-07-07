@@ -61,7 +61,7 @@ export default function RegisterUserProfile(props: PageProps<Extract<KcContext, 
                             )}
                             type="submit"
                             value={msgStr("doRegister")}
-                            disabled={!isFormSubmittable}
+                           /* disabled={!isFormSubmittable}*/
                         />
                     </div>
                 </div>

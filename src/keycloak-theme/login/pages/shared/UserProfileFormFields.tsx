@@ -76,42 +76,6 @@ export function UserProfileFormFields(props: UserProfileFormFieldsProps) {
                             </div>
                             <div className={getClassName("kcInputWrapperClass")}>
                                 {(() => {
-                                    const { options } = attribute.validators;
-
-                                    if (options !== undefined) {
-                                        return (
-                                            <select
-                                                id={attribute.name}
-                                                name={attribute.name}
-                                                onChange={event =>
-                                                    formValidationDispatch({
-                                                        "action": "update value",
-                                                        "name": attribute.name,
-                                                        "newValue": event.target.value
-                                                    })
-                                                }
-                                                onBlur={() =>
-                                                    formValidationDispatch({
-                                                        "action": "focus lost",
-                                                        "name": attribute.name
-                                                    })
-                                                }
-                                                value={value}
-                                            >
-                                                <>
-                                                    <option value="" selected disabled hidden>
-                                                        {msg("selectAnOption")}
-                                                    </option>
-                                                    {options.options.map(option => (
-                                                        <option key={option} value={option}>
-                                                            {option}
-                                                        </option>
-                                                    ))}
-                                                </>
-                                            </select>
-                                        );
-                                    }
-
                                     return (
                                         <input
                                             type={(() => {

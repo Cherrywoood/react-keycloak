@@ -1,6 +1,6 @@
 
 .my-color {
-	color: red;
+	color: blue;
 }
 
 .my-font {
@@ -12,5 +12,24 @@
 }
 
 .my-root-class body {
-	background: url(./assets/background.svg) no-repeat center center fixed;
+	/*background: url(./assets/background.svg) no-repeat center center fixed;*/
+	background: white;
+}
+
+/*МОЙ ПРИМЕР*/
+.my-button {
+	background: #b64d6f;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 10px;
+}
+
+.forgot-password {
+	text-align: center;
+}
+
+.form-card {
+	border: 1px solid gray;
+	border-radius: 3px;
+	box-shadow: 2px 4px 10px rgba(0,0,0,.2);
 }
