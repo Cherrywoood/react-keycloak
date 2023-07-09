@@ -4,7 +4,7 @@
 }
 
 .my-font {
-	font-family: 'Work Sans';
+	font-family: 'Work Sans', serif;
 }
 
 .my-root-class {
@@ -32,4 +32,17 @@
 	border: 1px solid gray;
 	border-radius: 3px;
 	box-shadow: 2px 4px 10px rgba(0,0,0,.2);
+}
+
+.my-link a{
+    color: #b64d6f;
+    font-weight: 600;
+}
+
+.my-header {
+	padding: 0 !important;
+}
+
+.my-login-page {
+	padding-top: 0;
 }

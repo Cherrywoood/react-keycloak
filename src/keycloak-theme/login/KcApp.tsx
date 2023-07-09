@@ -15,10 +15,12 @@ const LoginResetPassword = lazy(() => import("./pages/LoginResetPassword"));
 const classes: PageProps<any, any>["classes"] = {
     // NOTE: The classes are defined in ./KcApp.css
     "kcHtmlClass": "my-root-class",
-    "kcHeaderWrapperClass": "my-color my-font",
+    "kcHeaderWrapperClass": "my-header",
     "kcButtonClass": "my-button",
-    "kcFormOptionsWrapperClass": "forgot-password",
-    "kcFormCardClass": "form-card"
+    "kcFormOptionsWrapperClass": "forgot-password my-link",
+    "kcFormCardClass": "form-card",
+    "kcLoginClass": "my-login-page",
+    "kcInfoAreaWrapperClass": "my-link"
 };
 
 export default function KcApp(props: { kcContext: KcContext; }) {

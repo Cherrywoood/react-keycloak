@@ -28,26 +28,44 @@ export const { getKcContext } = createGetKcContext({
 				attributes: [
 					{
 						validators: {
-							"person-name-prohibited-characters":{
-								"error-message": "loh"
-							}
+							pattern: {
+								pattern: "^[a-zA-Z]+$",
+								"ignore.empty.value": true,
+								// eslint-disable-next-line no-template-curly-in-string
+								"error-message": "${alphanumericalCharsOnly}",
+							},
+						},
+						//NOTE: To override the default mock value
+						value: undefined,
+						name: "username"
+					},
+					{
+						validators: {
+							pattern: {
+								pattern: "^[a-zA-Z]+$",
+								"ignore.empty.value": true,
+								// eslint-disable-next-line no-template-curly-in-string
+								"error-message": "${alphanumericalCharsOnly}",
+							},
 
 						},
 						name: "firstName",
 					},
 					{
 						validators: {
-							"person-name-prohibited-characters": {
-								"error-message": "error"
-							}
+							pattern: {
+								pattern: "^[a-zA-Z0-9]+$",
+								"ignore.empty.value": true,
+								// eslint-disable-next-line no-template-curly-in-string
+								"error-message": "${alphanumericalCharsOnly}",
+							},
 						},
 						name: "lastName",
 					},
 					{
 						validators: {
 							email: {
-
-							}
+							},
 						},
 						name: "email",
 					},
@@ -65,7 +83,7 @@ export const { getKcContext } = createGetKcContext({
 
 export const { kcContext } = getKcContext({
 	// Uncomment to test the login page for development.
-	mockPageId: "register-user-profile.ftl",
+	//mockPageId: "register-user-profile.ftl",
 });
 
 

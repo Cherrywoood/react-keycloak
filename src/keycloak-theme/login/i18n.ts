@@ -16,7 +16,8 @@ export const { useI18n } = createUseI18n({
         doLogInHeader: "Sign In",
         noAccount: "New user?",
         doRegister: "Register",
-        requiredFields: "Required fields"
+        requiredFields: "Required fields",
+        invalidEmailMessage: "Invalid email address."
     },
     ru: {
         /* spell-checker: disable */
@@ -28,7 +29,8 @@ export const { useI18n } = createUseI18n({
         doLogInHeader: "Вход",
         noAccount: "Первый раз?",
         doRegister: "Создайте аккаунт",
-        requiredFields: "Обязательные поля"
+        requiredFields: "Обязательные поля",
+        invalidEmailMessage:"Неправильный E-mail."
         /* spell-checker: enable */
     }
 });
