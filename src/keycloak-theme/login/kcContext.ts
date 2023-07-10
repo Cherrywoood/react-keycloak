@@ -54,7 +54,7 @@ export const { getKcContext } = createGetKcContext({
 					{
 						validators: {
 							pattern: {
-								pattern: "^[a-zA-Z0-9]+$",
+								pattern: "^[a-zA-Z]+$",
 								"ignore.empty.value": true,
 								// eslint-disable-next-line no-template-curly-in-string
 								"error-message": "${alphanumericalCharsOnly}",
