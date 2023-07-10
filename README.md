@@ -29,7 +29,7 @@
 
 Для добавления новых страниц использовать команду npx eject-keycloak-page, а также добавить их в KcApp.tsx.
 
-Стили можно определять в KcApp.css, а затем их добавлять к классам в KcApp.tsx.
+Стили можно определять в KcApp.css, а затем их добавлять к классам в KcApp.tsx. <a href="https://github.com/keycloakify/keycloakify/issues/379">Еще про стили</a>
 
 Добавлять или менять сообщения можно в i18n.ts.
 
