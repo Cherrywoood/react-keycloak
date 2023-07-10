@@ -20,73 +20,13 @@
   <li><a href="https://github.com/react-keycloak/react-keycloak/blob/master/packages/web/README.md"><b>@react-keycloak/web git</b></a></li>
 </ul>
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Кастомные темы Keycloak
+Для кастомизации тем используется библиотека <a href="https://github.com/keycloakify/keycloakify">keycloakify</a>. Настоятельно рекомендуется ознакомиться с документацией и другой информацией проекта. А также ознакомиться со стартовым проектом <a href="https://github.com/keycloakify/keycloakify-starter">keycloakify-starter</a>. 
+Для нашего проекта я удалила лишнии файлы(как мне показалось) из стартового проекта. Страницы keycloak находятся в директории keycloak-theme. Там представлены кастомные страницы для логина и регистрации. 
+Для добавления библиотеки в свой проект необходимо выполнить команду npm i keycloakify и следующие строки в scripts в package.json: "prepare": "copy-keycloak-resources-to-public", "build-keycloak-theme": "npm run build && keycloakify". Про это в принципе написано в документации.
+Для добавления новых страниц использовать команду npx eject-keycloak-page, а также добавить их в KcApp.tsx.
+Стили можно определять в KcApp.css, а затем их добавлять к классам в KcApp.tsx.
+Добавлять или менять сообщения можно в i18n.ts.
+В kcContext.ts можно добавить валидацию на стороне клиента, пример есть.
+Для тестирования у них есть Storybook, но у меня не получилось его подключить. Чтобы посмотреть, как выглядит страничка можно в kcContext.ts раскомментрировать 94 строчку и написать нужно страницу. 
+После того, как странички будут готовы и захочется добавить их в keycloak использовать команду  "npm run  build-keycloak-theme". По пути build_keycloak/src/main/resources/theme/react-keycloak будут лежать файлы с темой. Необходимо в проект с бэкендом в директорию docker вставить build_keycloak/src/main/resources/theme/react-keycloak(прямо по этому пути). Перезагрузить контейнер.
