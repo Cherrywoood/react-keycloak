@@ -42,7 +42,7 @@ export const { getKcContext } = createGetKcContext({
 					{
 						validators: {
 							pattern: {
-								pattern: "^[a-zA-Z\u0401\u0451\u0410-\u044f]+$",
+								pattern: "^[A-zЁёА-я]+$",
 								"ignore.empty.value": true,
 								// eslint-disable-next-line no-template-curly-in-string
 								"error-message": "${alphanumericalCharsOnly}",
@@ -54,7 +54,7 @@ export const { getKcContext } = createGetKcContext({
 					{
 						validators: {
 							pattern: {
-								pattern: "^[a-zA-Z\u0401\u0451\u0410-\u044f]+$",
+								pattern: "^[A-zЁёА-я]+$",
 								"ignore.empty.value": true,
 								// eslint-disable-next-line no-template-curly-in-string
 								"error-message": "${alphanumericalCharsOnly}",
@@ -83,7 +83,7 @@ export const { getKcContext } = createGetKcContext({
 
 export const { kcContext } = getKcContext({
 	// Uncomment to test the login page for development.
-	//mockPageId: "register-user-profile.ftl",
+	//mockPageId: "terms.ftl",
 });
 
 
