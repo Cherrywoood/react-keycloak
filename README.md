@@ -40,3 +40,14 @@
 После того, как странички будут готовы и захочется добавить их в keycloak использовать команду  "npm run  build-keycloak-theme". По пути build_keycloak/src/main/resources/theme/react-keycloak будут лежать файлы с темой. Необходимо в проект с бэкендом в директорию docker вставить build_keycloak/src/main/resources/theme/react-keycloak(прямо по этому пути). Перезагрузить контейнер.
 
 Если возникнут вопрсы и проблемы, можно в репозитории библиотеки keycloak открыть обсуждение или проблему и человечек там ответит.
+
+# Условия и положения
+Зайти в Keycloak, выбрать realm Recrutment-system -> Authentication -> Required actions и включить **Terms and conditions**
+![image](https://github.com/Cherrywoood/react-keycloak/assets/58643112/4d5569dc-3ba4-4832-a497-47f6c0169c6d)
+
+Используем команду **npx eject-keycloak-page** для добавления новой страницы **terms.ftl** и не забываем добавить ее в **KcApp.tsx**. Пример, если что, в проекте есть.
+В файле Terms.tsx своего проекта добавляем хук **useDownloadTerms**. Как его правильно определить показано в проекте react-keycloak, начиная со строчки 21.
+В директории **assets** непосредственно храним файл tos_ru.md с текстом соглашения. Пока есть только примерный, как заглушка. Потом надо будет попросить его у Александра.
+
+Документация: https://docs.keycloakify.dev/terms-and-conditions
+
